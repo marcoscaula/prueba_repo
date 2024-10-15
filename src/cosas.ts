@@ -17,15 +17,15 @@ const cosas = [
 
 
 function getAll():Cosas[]{
-    //return cosas;
+    return cosas;
 }
 
 function getById(id:number):Cosas | undefined{
-   /* const producto_encontrado = cosas.find(p => p.id === id);
+   const producto_encontrado = cosas.find(p => p.id === id);
     if(producto_encontrado){
         return producto_encontrado;
     }else{
         return undefined;
-    }*/
+    }
 }
 export {getAll,getById};
