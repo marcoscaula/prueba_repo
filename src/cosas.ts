@@ -3,7 +3,7 @@ interface Cosas{
     name:string;
     description:string;
 }
-const cosas = [
+const cosas:Cosas[] = [
     {id: 1,name:"iphone 13  pro max",description: "super oferta"},
     {id: 2,name:"MacBook pro m3",description: "la mejor notebook del mercado"},
     {id: 3,name:"Cerveza Stella Artois",description: "oferta 2x1"},
@@ -13,7 +13,12 @@ const cosas = [
     {id: 7,name:"Pan Bimbo x 500grs",description: "pan blanco casero"}
 ]
 
-
+function getByDescription(texto:string):Cosas[]{
+    const producto =  cosas.filter(c => c.description.toLocaleLowerCase().includes(texto.toLocaleLowerCase())); 
+   
+    
+    return producto;
+}
 
 
 function getAll():Cosas[]{
@@ -28,4 +33,5 @@ function getById(id:number):Cosas | undefined{
         return undefined;
     }
 }
-export {getAll,getById};
+
+export {getAll,getById,getByDescription};
